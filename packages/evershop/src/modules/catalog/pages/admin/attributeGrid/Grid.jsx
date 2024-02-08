@@ -15,6 +15,7 @@ import YesNoRow from '@components/common/grid/rows/YesNoRow';
 import BasicColumnHeader from '@components/common/grid/headers/Basic';
 import GroupHeader from '@components/admin/catalog/attributeGrid/headers/GroupHeader';
 import DropdownColumnHeader from '@components/common/grid/headers/Dropdown';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 function Actions({ attributes = [], selectedIds = [] }) {
   const { openAlert, closeAlert } = useAlertContext();
@@ -36,15 +37,15 @@ function Actions({ attributes = [], selectedIds = [] }) {
       name: 'Delete',
       onAction: () => {
         openAlert({
-          heading: `Delete ${selectedIds.length} attributes`,
-          content: <div>Can&apos;t be undone</div>,
+          heading: _('Delete ${length} attributes', { length: selectedIds.length}),
+          content: <div>{_('Can&apos;t be undone')}</div>,
           primaryAction: {
-            title: 'Cancel',
+            title: _('Cancel'),
             onAction: closeAlert,
             variant: 'primary'
           },
           secondaryAction: {
-            title: 'Delete',
+            title: _('Delete'),
             onAction: async () => {
               await deleteAttributes();
             },
@@ -63,7 +64,7 @@ function Actions({ attributes = [], selectedIds = [] }) {
         <td style={{ borderTop: 0 }} colSpan="100">
           <div className="inline-flex border border-divider rounded justify-items-start">
             <a href="#" className="font-semibold pt-075 pb-075 pl-15 pr-15">
-              {selectedIds.length} selected
+              {_('${length} selected', {length: selectedIds.length} )}
             </a>
             {actions.map((action) => (
               <a
@@ -74,7 +75,7 @@ function Actions({ attributes = [], selectedIds = [] }) {
                 }}
                 className="font-semibold pt-075 pb-075 pl-15 pr-15 block border-l border-divider self-center"
               >
-                <span>{action.name}</span>
+                <span>{_('Delete')}</span>
               </a>
             ))}
           </div>
@@ -129,7 +130,7 @@ export default function AttributeGrid({
                     default: () => (
                       <BasicColumnHeader
                         id="name"
-                        title="Attribute Name"
+                        title={_('Attribute Name')}
                         currentFilters={currentFilters}
                       />
                     )
@@ -139,7 +140,7 @@ export default function AttributeGrid({
                 {
                   component: {
                     default: () => (
-                      <GroupHeader id="group" currentFilters={currentFilters} />
+                      <GroupHeader id="group" title={_('Attribute Group')} currentFilters={currentFilters} />
                     )
                   },
                   sortOrder: 15
@@ -149,7 +150,7 @@ export default function AttributeGrid({
                     default: () => (
                       <DropdownColumnHeader
                         id="type"
-                        title="Type"
+                        title={_('Type')}
                         currentFilters={currentFilters}
                         options={[
                           { value: 'text', text: 'Text' },
@@ -167,11 +168,11 @@ export default function AttributeGrid({
                     default: () => (
                       <DropdownColumnHeader
                         id="isRequired"
-                        title="Is Required?"
+                        title={_('Is Required?')}
                         currentFilters={currentFilters}
                         options={[
-                          { value: 1, text: 'Yes' },
-                          { value: 0, text: 'No' }
+                          { value: 1, text: _('Yes') },
+                          { value: 0, text: _('No') }
                         ]}
                       />
                     )
@@ -183,11 +184,11 @@ export default function AttributeGrid({
                     default: () => (
                       <DropdownColumnHeader
                         id="isFilterable"
-                        title="Is Filterable?"
+                        title={_('Is Filterable?')}
                         currentFilters={currentFilters}
                         options={[
-                          { value: 1, text: 'Yes' },
-                          { value: 0, text: 'No' }
+                          { value: 1, text: _('Yes') },
+                          { value: 0, text: _('No') }
                         ]}
                       />
                     )

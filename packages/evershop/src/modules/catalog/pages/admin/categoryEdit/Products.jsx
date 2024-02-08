@@ -6,6 +6,7 @@ import { useModal } from '@components/common/modal/useModal';
 import './Products.scss';
 import AddProducts from '@components/admin/catalog/collection/collectionEdit/AddProducts';
 import Spinner from '@components/common/Spinner';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 const ProductsQuery = `
   query Query ($id: Int, $filters: [FilterInput!]) {
@@ -108,10 +109,10 @@ export default function Products({ category: { categoryId, addProductApi } }) {
   if (data || fetching) {
     return (
       <Card
-        title="Products"
+        title={_("Products")}
         actions={[
           {
-            name: 'Add products',
+            name: _('Add Products'),
             onAction: () => {
               modal.openModal();
             }
@@ -146,18 +147,18 @@ export default function Products({ category: { categoryId, addProductApi } }) {
               <input
                 type="text"
                 value={keyword}
-                placeholder="Search products"
+                placeholder={_("Search products")}
                 onChange={(e) => setKeyword(e.target.value)}
               />
             </div>
             {data && (
               <>
                 {data.category.products.items.length === 0 && (
-                  <div>No product to display.</div>
+                  <div>{_('No product to display.')}</div>
                 )}
                 <div className="flex justify-between">
                   <div>
-                    <i>{data.category.products.total} items</i>
+                    <i>{_('${length} items', { length: data.category.products.total})}</i>
                   </div>
                   <div>
                     {data.category.products.total > 10 && (
@@ -243,7 +244,7 @@ export default function Products({ category: { categoryId, addProductApi } }) {
                           }}
                           className="text-critical hover:first-letter:"
                         >
-                          Remove
+                          {_('Remove')}
                         </a>
                       </div>
                     </div>

@@ -1,6 +1,7 @@
 import ProductList from '@components/frontStore/catalog/product/list/List';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 export default function FeaturedProducts({ collection }) {
   if (!collection) {
@@ -9,8 +10,8 @@ export default function FeaturedProducts({ collection }) {
   return (
     <div className="pt-3">
       <div className="page-width">
-        <h3 className="mt-3 mb-3 text-center uppercase h5 tracking-widest">
-          {collection.name}
+        <h3 className="mt-3 mb-3 text-center uppercase h4 tracking-widest">
+          {_('Featured Products')}
         </h3>
         <ProductList products={collection.products.items} countPerRow={4} />
       </div>

@@ -5,6 +5,7 @@ import { get } from '@evershop/evershop/src/lib/util/get';
 import { Field } from '@components/common/form/Field';
 import { Card } from '@components/admin/cms/Card';
 import CkeditorField from '@components/common/form/fields/Ckeditor';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 export default function General({
   collection,
@@ -19,9 +20,9 @@ export default function General({
       props: {
         id: 'name',
         name: 'name',
-        label: 'Name',
+        label: _('Collection Name'),
         validationRules: ['notEmpty'],
-        placeholder: 'Featured Products',
+        placeholder: _('Collection Name'),
         type: 'text'
       },
       sortOrder: 10,
@@ -32,9 +33,9 @@ export default function General({
       props: {
         id: 'code',
         name: 'code',
-        label: 'Unique ID',
+        label: _('Unique ID'),
         validationRules: ['notEmpty'],
-        placeholder: 'featuredProducts',
+        placeholder: _('Unique ID'),
         type: 'text'
       },
       sortOrder: 15,
@@ -54,7 +55,7 @@ export default function General({
       props: {
         id: 'description',
         name: 'description',
-        label: 'Description',
+        label: _('Collection Description'),
         browserApi,
         deleteApi,
         uploadApi,
@@ -71,7 +72,7 @@ export default function General({
   });
 
   return (
-    <Card title="General">
+    <Card title={_("General")}>
       <Card.Session>
         <Area id="collectionEditGeneral" coreComponents={fields} />
       </Card.Session>

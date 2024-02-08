@@ -1,0 +1,123 @@
+Sale Statistics, セール統計
+Dashboard, ダッシュボード
+Daily, 日々
+Weekly, 週間
+Monthly, 月次
+Look like you just started. No bestsellers yet., まるで始めたばかりのようです。まだベストセラーはありません。
+Best Sellers, ベストセラー
+Lifetime Sales, 累計売上
+${orders} orders, ${orders} 注文
+${total} lifetime sale, ${total} 累計売上
+${completed_percentage}% of orders completed, 注文の${completed_percentage}%が完了しました
+${cancelled_percentage}% of orders cancelled, 注文の${cancelled_percentage}%がキャンセルされました
+New Product, 新商品
+Catalog, カタログ
+All products, すべての商品
+Categories, カテゴリー
+Category, カテゴリー
+Collections, コレクション
+Products, 製品
+Attribute group, 属性グループ
+Attributes, 属性
+Product Name, 製品名
+General, 一般
+Product Description, 製品の説明
+Inventory, 在庫
+Manage stock?, 在庫を管理しますか？
+Stock availability, 在庫の可用性
+Media, メディア
+Create A New Product, 新しい製品を作成
+Editing ${name}, ${name} の編集
+Tax class, 税区分
+Meta title, メタタイトル
+Meta keywords, メタキーワード
+Meta description, メタディスクリプション
+Search engine optimize, 検索エンジン最適化
+Product status, 製品の状態
+Visibility, 可視性
+Url key, URL キー
+Setting, 設定
+Is Required?, 必須ですか？
+Not required, 必要ありません
+Required, 必要です
+Sort order, 並べ替え順
+Attribute Group, 属性グループ
+Attribute options, 属性オプション
+Type, タイプ
+Attribute code, 属性コード
+Attribute Name, 属性名
+Create a new group, 新しいグループを作成
+Create A New Attribute, 新しい属性を作成
+Delete ${length} attributes, ${length} の属性を削除
+Is Filterable?, フィルタ可能ですか？
+Select groups the attribute belongs to, 属性が属するグループを選択
+${length} selected, ${length} 選択
+Delete, 削除
+New Attribute, 新しい属性
+Can&apos;t be undone, 取り消しできません
+Parent category, 親カテゴリ
+Select Category, カテゴリを選択
+Click to upload an image, 画像をアップロードするにはクリック
+Add image, 画像を追加
+Category banner, カテゴリバナー
+Create A New Category, 新しいカテゴリを作成
+Include In Store Menu, ストアメニューに含める
+Category Name, カテゴリ名
+Category Description, カテゴリの説明
+Search products, 製品を検索
+Add Products, 製品を追加
+No product to display., 表示する製品はありません。
+${length} items, ${length} アイテム
+There is no category to display, 表示するカテゴリはありません
+Include In Menu, メニューに含める
+New Category, 新しいカテゴリ
+Collection Description, コレクションの説明
+Unique ID, ユニークID
+Collection Name, コレクション名
+Create A New Collection, 新しいコレクションを作成
+Delete ${length} collections, ${length} のコレクションを削除
+Code, コード
+There is no collections to display, 表示するコレクションはありません。
+New Collection, 新しいコレクション
+Variations, バリエーション
+Disable, 無効にする
+Disable ${length} products, ${length} の製品を無効にする
+Are you sure?, 本当によろしいですか？
+Enable, 有効にする
+Enable ${length} products, ${length} の製品を有効にする
+Delete ${length} products, ${length} の製品を削除
+Orders, 注文
+Shipping Setting, 配送設定
+Where you ship, shipping methods, and delivery fee,
+発送先、配送方法、送料
+Activities, お知らせ
+Customer was notified, 顧客に通知済み
+Edit Tracking Information, トラッキング情報の編集
+Tracking number, トラッキング番号
+Carrier, 運送会社
+Update tracking, トラッキングの更新
+Customer notes, 顧客のメモ
+No notes from customer, 顧客からのメモはありません
+Mark Delivered, 配達済みにする
+Editing #${name}, #${name} の編集
+Ship Items, 商品を発送する
+Ship, 発送
+Track shipment, 発送の追跡
+Mark as shipped, 発送済みにする
+Fulfill ${length} orders, ${length} の注文を処理する
+Send notification to the customer, 顧客に通知を送る
+There is no order to display, 表示する注文はありません
+Payment Status, 支払い状況
+Shipment Status, 発送状況
+Customer Email, 顧客のメールアドレス
+Date, 日付
+Order Number, 注文番号
+Customer, 顧客
+Billing address, 請求先住所
+Choose where you ship and how much you charge for shipping.,
+発送先と送料の金額を選択してください。
+Customers, 顧客
+Group, グループ
+Customer does not have any order yet.,
+この顧客はまだ注文がありません。
+Created At, 作成日時

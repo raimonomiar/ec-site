@@ -3,21 +3,17 @@ import { _ } from '@evershop/evershop/src/lib/locale/translate';
 import './MainBanner.scss';
 
 export default function MainBanner() {
-  const text = _('Discount ${discount} For All Orders Over ${price}', {
-    discount: '20%',
-    price: '$2000'
-  });
+  const text = ''
   return (
     <div className="main-banner-home flex items-center">
       <div className="container grid grid-cols-1 md:grid-cols-2 gap-2">
         <div />
-        <div className="text-center md:text-left px-2 ">
-          <h2 className="h1 ">{text}</h2>
+        <div classname="text-center md:text-left px-2 ">
+          <h2 classname="h1 ">{text}</h2>
           <p>
-            Use coupon code
-            <span className="font-bold">DISCOUNT20</span>
+            <span classname="font-bold"></span>
           </p>
-          <p>{_('Use coupon ${coupon}', { coupon: 'DISCOUNT20' })}</p>
+          <p></p>
           <p />
         </div>
       </div>

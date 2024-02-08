@@ -14,6 +14,7 @@ import BasicColumnHeader from '@components/common/grid/headers/Basic';
 import DropdownColumnHeader from '@components/common/grid/headers/Dropdown';
 import StatusRow from '@components/common/grid/rows/StatusRow';
 import YesNoRow from '@components/common/grid/rows/YesNoRow';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 function Actions({ categories = [], selectedIds = [] }) {
   const { openAlert, closeAlert } = useAlertContext();
@@ -38,12 +39,12 @@ function Actions({ categories = [], selectedIds = [] }) {
           heading: `Delete ${selectedIds.length} categories`,
           content: <div>Can&apos;t be undone</div>,
           primaryAction: {
-            title: 'Cancel',
+            title: _('Cancel'),
             onAction: closeAlert,
             variant: 'primary'
           },
           secondaryAction: {
-            title: 'Delete',
+            title: _('Delete'),
             onAction: async () => {
               await deleteCategories();
             },
@@ -62,7 +63,7 @@ function Actions({ categories = [], selectedIds = [] }) {
         <td style={{ borderTop: 0 }} colSpan="100">
           <div className="inline-flex border border-divider rounded justify-items-start">
             <a href="#" className="font-semibold pt-075 pb-075 pl-15 pr-15">
-              {selectedIds.length} selected
+              {_('${length} selected', { length: selectedIds.length})}
             </a>
             {actions.map((action, index) => (
               <a
@@ -74,7 +75,7 @@ function Actions({ categories = [], selectedIds = [] }) {
                 }}
                 className="font-semibold pt-075 pb-075 pl-15 pr-15 block border-l border-divider self-center"
               >
-                <span>{action.name}</span>
+                <span>{_('Delete')}</span>
               </a>
             ))}
           </div>
@@ -129,7 +130,7 @@ export default function CategoryGrid({
                   component: {
                     default: () => (
                       <BasicColumnHeader
-                        title="Category Name"
+                        title={_("Category Name")}
                         id="name"
                         currentFilters={currentFilters}
                       />
@@ -142,11 +143,11 @@ export default function CategoryGrid({
                     default: () => (
                       <DropdownColumnHeader
                         id="status"
-                        title="Status"
+                        title={_("Status")}
                         currentFilters={currentFilters}
                         options={[
-                          { value: 1, text: 'Enabled' },
-                          { value: 0, text: 'Disabled' }
+                          { value: 1, text: _('Enabled') },
+                          { value: 0, text: _('Disabled') }
                         ]}
                       />
                     )
@@ -158,11 +159,11 @@ export default function CategoryGrid({
                     default: () => (
                       <DropdownColumnHeader
                         id="includeInNav"
-                        title="Include In Menu"
+                        title={_("Include In Menu")}
                         currentFilters={currentFilters}
                         options={[
-                          { value: 1, text: 'Yes' },
-                          { value: 0, text: 'No' }
+                          { value: 1, text: _('Yes') },
+                          { value: 0, text: _('No') }
                         ]}
                       />
                     )
@@ -228,7 +229,7 @@ export default function CategoryGrid({
       </table>
       {categories.length === 0 && (
         <div className="flex w-full justify-center">
-          There is no category to display
+          {_('There is no category to display')}
         </div>
       )}
       <Pagination total={total} limit={limit} page={page} />

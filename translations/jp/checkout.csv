@@ -1,0 +1,62 @@
+Total, 合計
+Order, 注文
+Sku, SKU
+Continue to shipping, 発送に進む
+Continue shopping, ショッピングを続ける
+Continue Shopping, ショッピングを続ける
+CONTINUE SHOPPING, ショッピングを続ける
+Shopping cart, ショッピングカート
+Product, 製品
+Price, 価格
+Quantity, 数量
+Remove, 削除
+Qty, 数量
+Sub total, 小計
+Discount(${coupon}), 割引(${coupon})
+Order summary, 注文概要
+Taxes and shipping calculated at checkout, 税金と送料はお支払い時に計算されます
+CHECKOUT, チェックアウト
+Change, 変更
+Payment Method, 支払い方法
+Shipping Address, 送付先住所
+Shipping Method, 送料の方法
+No payment methods available, 利用可能な支払い方法はありません
+Place Order, 注文する
+My billing address is the same as the shipping address, 請求先住所は送付先住所と同じです
+${count} items, ${count} アイテム
+Discount, 割引
+Shipping, 送料
+No tax, 税なし
+Tax, 税金
+Sorry, 申し訳ありません
+Please enter a shipping address in order to see shipping quotes, 発送見積もりを確認するために発送先住所を入力してください
+Continue to payment, 支払いに進む
+No payment method available, 利用可能な支払い方法はありません
+Ship to, 発送先
+Shipment, 出荷
+Thank you ${name}!, ありがとうございます、${name}さん！
+Contact information, 連絡先情報
+Order #${orderNumber}, 注文番号#${orderNumber}
+ADD TO CART, カートに追加
+Please select variant options, 変種のオプションを選択してください
+VIEW CART (${count}), カートを見る (${count})
+JUST ADDED TO YOUR CART, あなたのカートに追加されました
+Promotion code?, プロモーションコード？
+Enter coupon code, クーポンコードを入力
+Apply, 適用
+Your cart is empty!, カートは空です！
+Full name, 氏名
+Telephone, 電話番号
+Address, 住所
+City, 都市
+Country, 国
+Postcode, 郵便番号
+Inclusive of tax, 税込み
+Sorry, 申し訳ありません
+Full name is required, 氏名は必須です
+Telephone is required, 電話番号は必須です
+Address is required, 住所は必須です
+City is required, 都市は必須です
+Country is required, 国は必須です
+Postcode is required, 郵便番号は必須です
+Contact, 連絡

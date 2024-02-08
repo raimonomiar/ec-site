@@ -12,6 +12,7 @@ import DropdownColumnHeader from '@components/common/grid/headers/Dropdown';
 import { Card } from '@components/admin/cms/Card';
 import CustomerNameRow from '@components/admin/customer/customerGrid/rows/CustomerName';
 import CreateAt from '@components/admin/customer/customerGrid/rows/CreateAt';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 function Actions({ customers = [], selectedIds = [] }) {
   const { openAlert, closeAlert } = useAlertContext();
@@ -31,18 +32,18 @@ function Actions({ customers = [], selectedIds = [] }) {
 
   const actions = [
     {
-      name: 'Disable',
+      name: _('Disable'),
       onAction: () => {
         openAlert({
-          heading: `Disable ${selectedIds.length} customers`,
-          content: 'Are you sure?',
+          heading: _('Disable ${length} customers', {length: selectedIds.length}),
+          content: _('Are you sure?'),
           primaryAction: {
-            title: 'Cancel',
+            title: _('Cancel'),
             onAction: closeAlert,
             variant: 'primary'
           },
           secondaryAction: {
-            title: 'Disable',
+            title: _('Disable'),
             onAction: async () => {
               await updateCustomers(0);
             },
@@ -53,18 +54,18 @@ function Actions({ customers = [], selectedIds = [] }) {
       }
     },
     {
-      name: 'Enable',
+      name: _('Enable'),
       onAction: () => {
         openAlert({
-          heading: `Enable ${selectedIds.length} customers`,
-          content: 'Are you sure?',
+          heading: _('Enable ${length} customers', {length: selectedIds.length}),
+          content: _('Are you sure?'),
           primaryAction: {
-            title: 'Cancel',
+            title: _('Cancel'),
             onAction: closeAlert,
             variant: 'primary'
           },
           secondaryAction: {
-            title: 'Enable',
+            title: _('Enable'),
             onAction: async () => {
               await updateCustomers(1);
             },
@@ -83,7 +84,7 @@ function Actions({ customers = [], selectedIds = [] }) {
         <td style={{ borderTop: 0 }} colSpan="100">
           <div className="inline-flex border border-divider rounded justify-items-start">
             <a href="#" className="font-semibold pt-075 pb-075 pl-15 pr-15">
-              {selectedIds.length} selected
+              {_('${length} selected', {length: selectedIds.length})}
             </a>
             {actions.map((action) => (
               <a
@@ -148,7 +149,7 @@ export default function CustomerGrid({
                   component: {
                     default: () => (
                       <BasicColumnHeader
-                        title="Full Name"
+                        title={_("Full Name")}
                         id="full_name"
                         currentFilters={currentFilters}
                       />
@@ -161,7 +162,7 @@ export default function CustomerGrid({
                   component: {
                     default: () => (
                       <BasicColumnHeader
-                        title="Email"
+                        title={_("Email")}
                         id="email"
                         currentFilters={currentFilters}
                       />
@@ -174,12 +175,12 @@ export default function CustomerGrid({
                   component: {
                     default: () => (
                       <DropdownColumnHeader
-                        title="Status"
+                        title={_("Status")}
                         id="status"
                         currentFilters={currentFilters}
                         options={[
-                          { value: 1, text: 'Enabled' },
-                          { value: 0, text: 'Disabled' }
+                          { value: 1, text: _('Enabled') },
+                          { value: 0, text: _('Disabled') }
                         ]}
                       />
                     )
@@ -191,7 +192,7 @@ export default function CustomerGrid({
                   component: {
                     default: () => (
                       <BasicColumnHeader
-                        title="Created At"
+                        title={_("Created At")}
                         id="created_at"
                         currentFilters={currentFilters}
                       />
@@ -278,7 +279,7 @@ export default function CustomerGrid({
       </table>
       {customers.length === 0 && (
         <div className="flex w-full justify-center">
-          There is no customer to display
+          {_('There is no customer to display')}
         </div>
       )}
       <Pagination total={total} limit={limit} page={page} />

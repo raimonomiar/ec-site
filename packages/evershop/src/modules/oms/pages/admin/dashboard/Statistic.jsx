@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 import { Card } from '@components/admin/cms/Card';
 import './Statistic.scss';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 export default function SaleStatistic({ api }) {
   const [data, setData] = useState([]);
@@ -40,18 +41,18 @@ export default function SaleStatistic({ api }) {
   } else {
     return (
       <Card
-        title="Sale Statistics"
+        title={_('Sale Statistics')}
         actions={[
           {
-            name: 'Daily',
+            name: _('Daily'),
             onAction: () => setPeriod('daily')
           },
           {
-            name: 'Weekly',
+            name: _('Weekly'),
             onAction: () => setPeriod('weekly')
           },
           {
-            name: 'Monthly',
+            name: _('Monthly'),
             onAction: () => setPeriod('monthly')
           }
         ]}

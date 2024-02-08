@@ -6,6 +6,7 @@ import { toast } from 'react-toastify';
 import Dot from '@components/common/Dot';
 import { Card } from '@components/admin/cms/Card';
 import './Lifetimesales.scss';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 const COLORS = ['#aee9d1', '#fed3d1', '#a4e8f2'];
 
@@ -44,7 +45,7 @@ export default function LifetimeSale({ api }) {
 
   if (fetching) {
     return (
-      <Card title="Lifetime Sales">
+      <Card title={_('Lifetime Sales')}>
         <Card.Session>
           <div className="skeleton-wrapper-lifetime">
             <div className="skeleton" />
@@ -62,27 +63,27 @@ export default function LifetimeSale({ api }) {
     );
   } else {
     return (
-      <Card title="Lifetime Sales">
+      <Card title={_('Lifetime Sales')}>
         <Card.Session>
           <div className="grid grid-cols-1 gap-1">
             <div className="flex space-x-1 items-center">
               <Dot variant="info" />
-              <div className="self-center">{orders} orders</div>
+              <div className="self-center">{_('${orders} orders', { orders })}</div>
             </div>
             <div className="flex space-x-1 items-center">
               <Dot variant="info" />
-              <div className="self-center">{total} lifetime sale</div>
+              <div className="self-center">{_('${total} lifetime sale', { total })}</div>
             </div>
             <div className="flex space-x-1 items-center">
               <Dot variant="success" />
               <div className="self-center">
-                {completed_percentage}% of orders completed
+                {_('${completed_percentage}% of orders completed', { completed_percentage })}
               </div>
             </div>
             <div className="flex space-x-1 items-center">
               <Dot variant="critical" />
               <div className="self-center">
-                {cancelled_percentage}% of orders cancelled
+                {_('${cancelled_percentage}% of orders cancelled', { cancelled_percentage })}
               </div>
             </div>
           </div>

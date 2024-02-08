@@ -13,6 +13,7 @@ import CollectionNameRow from '@components/admin/catalog/collectionGrid/rows/Col
 import BasicColumnHeader from '@components/common/grid/headers/Basic';
 import TextRow from '@components/common/grid/rows/TextRow';
 import DummyColumnHeader from '@components/common/grid/headers/Dummy';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 function Actions({ collections = [], selectedIds = [] }) {
   const { openAlert, closeAlert } = useAlertContext();
@@ -34,15 +35,15 @@ function Actions({ collections = [], selectedIds = [] }) {
       name: 'Delete',
       onAction: () => {
         openAlert({
-          heading: `Delete ${selectedIds.length} collections`,
-          content: <div>Can&apos;t be undone</div>,
+          heading: _('Delete ${length} collections', {length: selectedIds.length}),
+          content: <div>{_('Can&apos;t be undone')}</div>,
           primaryAction: {
-            title: 'Cancel',
+            title: _('Cancel'),
             onAction: closeAlert,
             variant: 'primary'
           },
           secondaryAction: {
-            title: 'Delete',
+            title: _('Delete'),
             onAction: async () => {
               await deleteCategories();
             },
@@ -61,7 +62,7 @@ function Actions({ collections = [], selectedIds = [] }) {
         <td style={{ borderTop: 0 }} colSpan="100">
           <div className="inline-flex border border-divider rounded justify-items-start">
             <a href="#" className="font-semibold pt-075 pb-075 pl-15 pr-15">
-              {selectedIds.length} selected
+              {_('${length} selected', {length: selectedIds.length})}
             </a>
             {actions.map((action, index) => (
               <a
@@ -73,7 +74,7 @@ function Actions({ collections = [], selectedIds = [] }) {
                 }}
                 className="font-semibold pt-075 pb-075 pl-15 pr-15 block border-l border-divider self-center"
               >
-                <span>{action.name}</span>
+                <span>{_('Delete')}</span>
               </a>
             ))}
           </div>
@@ -141,7 +142,7 @@ export default function CollectionGrid({
                     component: {
                       default: () => (
                         <BasicColumnHeader
-                          title="Collection Name"
+                          title={_("Collection Name")}
                           id="name"
                           currentFilters={currentFilters}
                         />
@@ -153,7 +154,7 @@ export default function CollectionGrid({
                     component: {
                       default: () => (
                         <BasicColumnHeader
-                          title="Code"
+                          title={_("Code")}
                           id="code"
                           currentFilters={currentFilters}
                         />
@@ -224,7 +225,7 @@ export default function CollectionGrid({
         </table>
         {collections.length === 0 && (
           <div className="flex w-full justify-center">
-            There is no collections to display
+            {_('There is no collections to display')}
           </div>
         )}
         <Pagination total={total} limit={limit} page={page} />

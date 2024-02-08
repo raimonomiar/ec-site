@@ -17,6 +17,7 @@ import ShipmentStatusRow from '@components/admin/oms/orderGrid/rows/ShipmentStat
 import PaymentStatusRow from '@components/admin/oms/orderGrid/rows/PaymentStatus';
 import TotalRow from '@components/admin/oms/orderGrid/rows/TotalRow';
 import CreateAt from '@components/admin/customer/customerGrid/rows/CreateAt';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 function Actions({ orders = [], selectedIds = [] }) {
   const { openAlert, closeAlert } = useAlertContext();
@@ -36,23 +37,23 @@ function Actions({ orders = [], selectedIds = [] }) {
 
   const actions = [
     {
-      name: 'Mark as shipped',
+      name: _('Mark as shipped'),
       onAction: () => {
         openAlert({
-          heading: `Fullfill ${selectedIds.length} orders`,
+          heading: _('Fullfill ${length} orders', {length: selectedIds.length}),
           content: (
             <Checkbox
               name="notify_customer"
-              label="Send notification to the customer"
+              label={_("Send notification to the customer")}
             />
           ),
           primaryAction: {
-            title: 'Cancel',
+            title: _('Cancel'),
             onAction: closeAlert,
             variant: 'default'
           },
           secondaryAction: {
-            title: 'Mark as shipped',
+            title: _('Mark as shipped'),
             onAction: async () => {
               await fullFillOrders();
             },
@@ -71,7 +72,7 @@ function Actions({ orders = [], selectedIds = [] }) {
         <td style={{ borderTop: 0 }} colSpan="100">
           <div className="inline-flex border border-divider rounded justify-items-start">
             <a href="#" className="font-semibold pt-075 pb-075 pl-15 pr-15">
-              {selectedIds.length} selected
+              {_('${length} selected', {length: selectedIds.length})}
             </a>
             {actions.map((action) => (
               <a
@@ -142,7 +143,7 @@ export default function OrderGrid({
                   component: {
                     default: () => (
                       <BasicColumnHeader
-                        title="Order Number"
+                        title={_("Order Number")}
                         id="orderNumber"
                         currentFilters={currentFilters}
                       />
@@ -154,7 +155,7 @@ export default function OrderGrid({
                   component: {
                     default: () => (
                       <FromToColumnHeader
-                        title="Date"
+                        title={_("Date")}
                         id="createdAt"
                         currentFilters={currentFilters}
                       />
@@ -166,7 +167,7 @@ export default function OrderGrid({
                   component: {
                     default: () => (
                       <BasicColumnHeader
-                        title="Customer Email"
+                        title={_("Customer Email")}
                         id="customerEmail"
                         currentFilters={currentFilters}
                       />
@@ -178,7 +179,7 @@ export default function OrderGrid({
                   component: {
                     default: () => (
                       <ShipmentStatusColumnHeader
-                        title="Shipment Status"
+                        title={_("Shipment Status")}
                         id="shipmentStatus"
                         shipmentStatusList={shipmentStatusList}
                         currentFilters={currentFilters}
@@ -191,7 +192,7 @@ export default function OrderGrid({
                   component: {
                     default: () => (
                       <PaymentStatusColumnHeader
-                        title="Payment Status"
+                        title={_("Payment Status")}
                         id="paymentStatus"
                         paymentStatusList={paymentStatusList}
                         currentFilters={currentFilters}
@@ -204,7 +205,7 @@ export default function OrderGrid({
                   component: {
                     default: () => (
                       <FromToColumnHeader
-                        title="Total"
+                        title={_("Total")}
                         id="grandTotal"
                         currentFilters={currentFilters}
                       />
@@ -299,7 +300,7 @@ export default function OrderGrid({
       </table>
       {orders.length === 0 && (
         <div className="flex w-full justify-center">
-          There is no order to display
+          {_('There is no order to display')}
         </div>
       )}
       <Pagination total={total} limit={limit} page={page} />
